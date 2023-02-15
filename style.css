@@ -1,0 +1,16 @@
+#screen {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+#game-background {
+  background-image: url(clickerpictures/Kitchen.png);
+  background-size: cover;
+}
+#game-elements {
+  grid-area: 1 / 1;
+  position: relative;
+  overflow: hidden;
+}
+img {
+  width: 100;
+}
