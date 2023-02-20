@@ -10,35 +10,57 @@
   <body>
     <div id="screen">
       <div id="game">
-        <div id="game-background">
-          <div id="background-container"></div>
+        <div id="game_background">
+          <div id="background_container"></div>
         </div>
-        <div id="game-elements">
-          <div id="banana-container"></div>
-          <div id="japaleno-container">
-            <img id="jalapeno-sprite" src="clickerpictures/Jalapeno.png" />
+        <div id="game_elements">
+          <div id="banana_container" class="pattern pause">
+            <img
+              id="banana_sprite"
+              class="zoom_out"
+              src="clickerpictures/Banana.png"
+            />
           </div>
-          <div id="salad-container">
-            <img id="salad-sprite" src="clickerpictures/Salad.png" />
+          <div id="jalapeno_container" class="falling_1 pause">
+            <img
+              id="jalapeno_sprite"
+              class="zoom_out"
+              src="clickerpictures/Jalapeno.png"
+            />
           </div>
-          <div id="strawberry-container">
-            <img id="strawberry-sprite" src="clickerpictures/Strawberry.png" />
+          <div id="salad_container" class="falling_2 pause">
+            <img
+              id="salad_sprite"
+              class="zoom_out"
+              src="clickerpictures/Salad.png"
+            />
           </div>
-          <div id="tomato-container">
-            <img id="tomato-container" src="clickerpictures/Tomato.png" />
+          <div id="strawberry_container" class="sliding pause">
+            <img
+              id="strawberry_sprite"
+              class="zoom_out"
+              src="clickerpictures/Strawberry.png"
+            />
+          </div>
+          <div id="tomato_container" class="falling_3 pause">
+            <img
+              id="tomato_container"
+              class="zoom_out"
+              src="clickerpictures/Tomato.png"
+            />
           </div>
         </div>
-        <div id="game-ui">
-          <div id="score-board"></div>
-          <div id="life-board">
-            <div id="chef-container"></div>
+        <div id="game_ui">
+          <div id="score_board"></div>
+          <div id="life_board">
+            <div id="chef_container"></div>
           </div>
-          <div id="time-board"></div>
+          <div id="time_board"></div>
         </div>
       </div>
       <div id="start"></div>
-      <div id="game-over"></div>
-      <div id="level-complete"></div>
+      <div id="game_over"></div>
+      <div id="level_complete"></div>
     </div>
   </body>
 </html>

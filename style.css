@@ -2,15 +2,164 @@
   aspect-ratio: 16/9;
   width: 100%;
 }
-#game-background {
+body {
   background-image: url(clickerpictures/Kitchen.png);
   background-size: cover;
+  z-index: 1;
+  overflow: hidde;
 }
-#game-elements {
+#game_elements {
   grid-area: 1 / 1;
   position: relative;
-  overflow: hidden;
+  max-width: 100%;
 }
 img {
   width: 100;
 }
+
+#tomato_container {
+  position: absolute;
+  top: 1%;
+  right: 45%;
+}
+
+#banana_container {
+  position: absolute;
+  right: 20%;
+}
+#jalapeno_container {
+  position: absolute;
+  right: 0%;
+  padding-right: 50px;
+}
+
+#salad_container {
+  position: absolute;
+  padding-left: 35vh;
+}
+
+#strawberry_container {
+  margin-left: 20px;
+}
+
+#banana_sprite {
+  animation-name: pattern;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 999;
+}
+@keyframes pattern {
+  0% {
+    transform: translate(-100%, -50%);
+  }
+  25% {
+    transform: translate(-300%, 150%);
+  }
+  50% {
+    transform: translate(-100%, 350%);
+  }
+  75% {
+    transform: translate(150%, 150%);
+  }
+  100% {
+    transform: translate(-100%, -50%);
+  }
+}
+
+.sliding {
+  animation-name: sliding;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 999;
+}
+@keyframes sliding {
+  0% {
+    transform: translate(-50vh, 10vh);
+  }
+  25% {
+    transform: translate(-50vh, 60vh);
+  }
+  50% {
+    transform: translate(200vh, 60vh);
+  }
+  75% {
+    transform: translate(200vh, 10vh);
+  }
+  100% {
+    transform: translate(-50vh, 10vh);
+  }
+}
+.falling_1 {
+  animation-name: falling_1;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes falling_1 {
+  0% {
+    transform: translate(0, -300%);
+  }
+
+  100% {
+    transform: translate(-400%, 300%);
+  }
+}
+
+.falling_2 {
+  animation-name: falling_2;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes falling_2 {
+  0% {
+    transform: translate(-150%, -300%);
+  }
+
+  100% {
+    transform: translate(150%, 300%);
+  }
+}
+.falling_3 {
+  animation-name: falling_3;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes falling_3 {
+  0% {
+    transform: translate(0, -50vw);
+  }
+
+  100% {
+    transform: translate(50vw, 65vw);
+  }
+}
+
+.pause {
+  animation-play-state: paused;
+}
+
+.zoom_out {
+  animation-name: zoom_out;
+  animation-duration: 3s;
+  animation-timing-function: end;
+  animation-iteration-count: infinite;
+
+  /* animation-fill-mode: forwards; */
+}
+@keyframes zoom_out {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0, 0);
+  }
+}
+/* tilføj zoomout med fill mode forward og en .pause {animation-play-state: paused;}
+samt tilføj pause class id ved falling og zoomout class ved sprite linjen */
