@@ -1,20 +1,19 @@
 #screen {
   aspect-ratio: 16/9;
-  width: 100%;
+  display: grid;
+  grid-template: 100% / 100%;
 }
 body {
   background-image: url(clickerpictures/Kitchen.png);
   background-size: cover;
   z-index: 1;
-  overflow: hidde;
+  overflow: hidden;
 }
+
 #game_elements {
   grid-area: 1 / 1;
   position: relative;
   max-width: 100%;
-}
-img {
-  width: 100;
 }
 
 #tomato_container {
@@ -23,14 +22,27 @@ img {
   right: 45%;
 }
 
+#tomato_sprite {
+  width: 100%;
+}
+
 #banana_container {
   position: absolute;
   right: 20%;
 }
+
+#banana_sprite {
+  width: 90%;
+}
+
 #jalapeno_container {
   position: absolute;
   right: 0%;
   padding-right: 50px;
+}
+
+#jalapeno_sprite {
+  width: 100%;
 }
 
 #salad_container {
@@ -38,8 +50,16 @@ img {
   padding-left: 35vh;
 }
 
+#salad_sprite {
+  width: 100%;
+}
+
 #strawberry_container {
   margin-left: 20px;
+}
+
+#strawberry_sprite {
+  width: 15%;
 }
 
 #banana_sprite {
@@ -49,6 +69,42 @@ img {
   animation-iteration-count: infinite;
   z-index: 999;
 }
+
+#game_ui {
+  position: absolute;
+  top: 0vw;
+  right: 0vw;
+  color: white;
+
+  font-size: 4em;
+  font-family: "Times New Roman", Times, serif;
+  text-align: right;
+
+  pointer-events: none;
+}
+
+#life_board img {
+  width: 15%;
+}
+
+#coin_count {
+  text-align: right;
+}
+
+.active_heart {
+  filter: drop-shadow(0 0 20px black);
+}
+
+.broken_heart {
+  filter: grayscale(50%) blur(0.5px);
+}
+
+#score_board {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.1em;
+}
+
 @keyframes pattern {
   0% {
     transform: translate(-100%, -50%);
@@ -141,7 +197,7 @@ img {
   }
 }
 
-.pause {
+.paused {
   animation-play-state: paused;
 }
 
@@ -149,16 +205,34 @@ img {
   animation-name: zoom_out;
   animation-duration: 3s;
   animation-timing-function: end;
-  animation-iteration-count: infinite;
-
-  /* animation-fill-mode: forwards; */
+  animation-iteration-count: forwards;
 }
+
+/* animation-fill-mode: forwards; */
+
 @keyframes zoom_out {
   0% {
     transform: scale(1, 1);
   }
   100% {
     transform: scale(0, 0);
+  }
+}
+
+.zoom_in {
+  animation-name: zoom_in;
+  animation-duration: 3s;
+  animation-timing-function: end;
+  animation-iteration-count: forwards;
+}
+
+@keyframes zoom_in {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(100, 100);
+    opacity: 100%;
   }
 }
 /* tilføj zoomout med fill mode forward og en .pause {animation-play-state: paused;}

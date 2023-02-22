@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
   </head>
   <body>
     <div id="screen">
@@ -14,35 +15,36 @@
           <div id="background_container"></div>
         </div>
         <div id="game_elements">
-          <div id="banana_container" class="pattern pause">
+          <div id="banana_container" class="paused">
             <img
               id="banana_sprite"
-              class="zoom_out"
+              class="zoom_in"
               src="clickerpictures/Banana.png"
+              alt="banana"
             />
           </div>
-          <div id="jalapeno_container" class="falling_1 pause">
+          <div id="jalapeno_container" class="falling_1 paused">
             <img
               id="jalapeno_sprite"
               class="zoom_out"
               src="clickerpictures/Jalapeno.png"
             />
           </div>
-          <div id="salad_container" class="falling_2 pause">
+          <div id="salad_container" class="falling_2 paused">
             <img
               id="salad_sprite"
               class="zoom_out"
               src="clickerpictures/Salad.png"
             />
           </div>
-          <div id="strawberry_container" class="sliding pause">
+          <div id="strawberry_container" class="sliding paused">
             <img
               id="strawberry_sprite"
               class="zoom_out"
               src="clickerpictures/Strawberry.png"
             />
           </div>
-          <div id="tomato_container" class="falling_3 pause">
+          <div id="tomato_container" class="falling_3 paused">
             <img
               id="tomato_container"
               class="zoom_out"
@@ -51,11 +53,29 @@
           </div>
         </div>
         <div id="game_ui">
-          <div id="score_board"></div>
-          <div id="life_board">
-            <div id="chef_container"></div>
+          <div id="score_board">
+            <span id="point_count">0</span>
           </div>
-          <div id="time_board"></div>
+          <div id="life_board">
+            <img
+              id="heart_1"
+              src="clickerpictures/Health.png"
+              class="active_heart"
+            />
+            <img
+              id="heart_2"
+              src="clickerpictures/Health.png"
+              class="active_heart"
+            />
+            <img
+              id="heart_3"
+              src="clickerpictures/Health.png"
+              class="active_heart"
+            />
+          </div>
+          <div id="time_board">
+            <div id="time_left"></div>
+          </div>
         </div>
       </div>
       <div id="start"></div>
