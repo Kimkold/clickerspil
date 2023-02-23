@@ -6,7 +6,7 @@ let points = 0;
 let lives = 3;
 
 function start() {
-  console.log("fstart");
+  console.log("start");
 
   document.querySelector("#jalapeno_container").classList.add("falling_1");
   document.querySelector("#salad_container").classList.add("falling_2");
@@ -177,7 +177,12 @@ function clickStrawberry() {
 
 function decrementLives() {
   console.log("banana bad");
-  displayDecrementLives();
+
+  if (lives <= 0) {
+    gameOver();
+  } else {
+    displayDecrementLives();
+  }
   lives--;
 }
 function displayDecrementLives() {
@@ -214,6 +219,16 @@ function strawberryGone() {
     .querySelector("#strawberry_container")
     .addEventListener("click", clickStrawberry);
 }
+
+function gameOver() {
+  document.querySelector("#game_over").classList.remove("hidden");
+  document.querySelector("#jalapeno_container").classList.remove("falling_1");
+  document.querySelector("#salad_container").classList.remove("falling_2");
+  document.querySelector("#tomato_container").classList.remove("falling_3");
+  document.querySelector("#banana_container").classList.remove("pattern");
+  document.querySelector("#strawberry_container").classList.remove("sliding");
+}
+
 //   document.querySelector("#banana_container").classList.add("pattern");
 //   document.querySelector("#jalapeno_container").classList.add("falling_1");
 //   document.querySelector("#salad_container").classList.add("falling_2");

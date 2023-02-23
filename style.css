@@ -10,6 +10,17 @@ body {
   overflow: hidden;
 }
 
+.gameDoneFont {
+  text-align: center;
+  font-size: 10em;
+}
+
+/* #game_over
+font-size 4ex
+game over function addclasslist #game_over
+remove classlist falling
+ */
+
 #game_elements {
   grid-area: 1 / 1;
   position: relative;
@@ -63,6 +74,12 @@ body {
 }
 #banana_sprite {
   width: 100%;
+}
+
+.hidden,
+#game_over.hidden,
+#level_complete.hidden {
+  display: none;
 }
 
 #game_ui {
@@ -226,7 +243,7 @@ body {
 
 .zoom_in {
   animation-name: zoom_in;
-  animation-duration: 3s;
+  animation-duration: 1s;
   animation-timing-function: end;
   animation-iteration-count: forwards;
 }
